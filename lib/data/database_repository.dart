@@ -1,4 +1,4 @@
- import '../src/features/settings/domain/dailyEntry.dart';
+import '../src/features/diary/domain/daily_entry.dart';
 
 abstract class DatabaseRepository {
   void addEntry(DailyEntry entry);

@@ -1,15 +1,15 @@
-import 'dailyEntry.dart';
+import '../../diary/domain/daily_entry.dart';
 
-class User{
+class User {
   String profilbild;
   String email;
   String userName;
   String password;
   DateTime birthday;
 
-List <DailyEntry> diary;
+  List<DailyEntry> diary;
 
-   User({
+  User({
     required this.profilbild,
     required this.email,
     required this.userName,

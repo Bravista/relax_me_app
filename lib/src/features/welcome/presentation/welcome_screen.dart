@@ -5,8 +5,11 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(mainAxisAlignment: MainAxisAlignment.center,children: [
-      Image.asset("assets/images/hauptlogo.png")
-    ],),);
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Image.asset("assets/images/hauptlogo.png")],
+      ),
+    );
   }
 }
