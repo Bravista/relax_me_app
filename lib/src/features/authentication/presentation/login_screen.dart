@@ -14,12 +14,6 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 100),
               Image.asset("assets/images/hauptlogo.png"),
-              const TextField(),
-              const TextField(),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text("login"),
-              ),
             ],
           ),
         ),
