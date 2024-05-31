@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relax_me_app/src/features/hauptmenu/presentation/hauptmenu.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,33 +27,64 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         child: SafeArea(
           child: Center(
-            child: Column(
-              children: [
-                const TextField(),
-                const TextField(),
-                const SizedBox(
-                  height: 30,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginScreen()));
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xFFF0A770),
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  Image.asset("assets/images/hauptlogo.png"),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  Form(
+                      child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          label: Text("Emailadresse"),
+                          fillColor: Colors.white,
+                          filled: true,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      TextFormField(
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          label: Text("Passwort"),
+                          fillColor: Colors.white,
+                          filled: true,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                    ],
+                  )),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Hauptmenu()));
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all<Color>(
+                        const Color(0xFFF0A770),
+                      ),
+                      minimumSize:
+                          WidgetStateProperty.all<Size>(const Size(270, 43)),
                     ),
-                    minimumSize:
-                        WidgetStateProperty.all<Size>(const Size(270, 43)),
+                    child: const Text(
+                      "Login",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
                   ),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
