@@ -1,5 +1,5 @@
-import '../src/features/diary/domain/daily_entry.dart';
-import '../src/features/profile/domain/user.dart';
+import '../features/diary/domain/daily_entry.dart';
+import '../features/profile/domain/user.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {

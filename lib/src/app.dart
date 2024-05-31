@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:relax_me_app/src/features/welcome/presentation/welcome_screen.dart';
+import 'package:relax_me_app/src/features/authentication/presentation/login_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
