@@ -15,17 +15,20 @@ class MockDatabase implements DatabaseRepository {
   List<DailyEntry> dailyEntries = [];
 
   @override
-  void addEntry(DailyEntry entry) {
+  Future<void> addEntry(DailyEntry entry) async {
+    await Future.delayed(const Duration(seconds: 1));
     currUser.diary.add(entry);
   }
 
   @override
-  void deleteEntry(DailyEntry entry) {
+  Future<void> deleteEntry(DailyEntry entry) async {
+    await Future.delayed(const Duration(seconds: 1));
     currUser.diary.remove(entry);
   }
 
   @override
-  List<DailyEntry> getAllDailyEntries() {
+  Future<List<DailyEntry>> getAllDailyEntries() async {
+    await Future.delayed(const Duration(seconds: 1));
     return currUser.diary;
   }
 }
