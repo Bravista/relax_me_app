@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relax_me_app/src/features/diary/presentation/diary.dart';
 
 class Hauptmenu extends StatelessWidget {
   const Hauptmenu({super.key});
@@ -26,15 +27,20 @@ class Hauptmenu extends StatelessWidget {
             height: 100,
           ),
           Image.asset('assets/images/hintergrundlogo.png'),
-          const SizedBox(height: 50),
+          const SizedBox(height: 175),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DiaryScreen()),
+                );
+              },
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Mood Check"),
                   SizedBox(
-                    width: 12,
+                    width: 10,
                   ),
                   Icon(Icons.access_alarm_outlined)
                 ],
@@ -44,9 +50,9 @@ class Hauptmenu extends StatelessWidget {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Stress reduzieren"),
+                  Text("Relax Me"),
                   Padding(
-                    padding: EdgeInsets.only(left: 12.0),
+                    padding: EdgeInsets.only(left: 10),
                     child: Icon(Icons.access_alarm_outlined),
                   )
                 ],
@@ -56,9 +62,9 @@ class Hauptmenu extends StatelessWidget {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Mit Community chatten"),
+                  Text("Community Chat"),
                   SizedBox(
-                    width: 12,
+                    width: 10,
                   ),
                   Icon(Icons.access_alarm_outlined)
                 ],
@@ -70,7 +76,7 @@ class Hauptmenu extends StatelessWidget {
                 children: [
                   Text("Mind Supplements"),
                   SizedBox(
-                    width: 12,
+                    width: 10,
                   ),
                   Icon(Icons.access_alarm_outlined)
                 ],
