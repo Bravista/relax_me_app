@@ -1,7 +1,7 @@
 import '../features/diary/domain/daily_entry.dart';
 
 abstract class DatabaseRepository {
-  void addEntry(DailyEntry entry);
-  void deleteEntry(DailyEntry entry);
+  Future<void> addEntry(DailyEntry entry);
+  Future<void> deleteEntry(DailyEntry entry);
   Future<List<DailyEntry>> getAllDailyEntries();
 }
