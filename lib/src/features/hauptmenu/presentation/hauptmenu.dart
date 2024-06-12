@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:relax_me_app/src/data/database_repository.dart';
 import 'package:relax_me_app/src/features/diary/presentation/diary.dart';
 
 class Hauptmenu extends StatelessWidget {
-  const Hauptmenu({super.key});
+  final DatabaseRepository databaseRepository;
+
+  const Hauptmenu(this.databaseRepository, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,8 @@ class Hauptmenu extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DiaryScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => DiaryScreen(databaseRepository)),
                 );
               },
               child: const Row(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:relax_me_app/src/data/database_repository.dart';
 import 'package:relax_me_app/src/features/hauptmenu/presentation/hauptmenu.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final DatabaseRepository databaseRepository;
+  const LoginScreen(this.databaseRepository, {super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -68,7 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Hauptmenu()));
+                              builder: (context) =>
+                                  Hauptmenu(widget.databaseRepository)));
                     },
                     style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all<Color>(

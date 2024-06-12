@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:relax_me_app/src/data/mock_database.dart';
+import 'package:relax_me_app/src/data/database_repository.dart';
 
 class DiaryScreen extends StatefulWidget {
-  const DiaryScreen({super.key});
+  final DatabaseRepository databaseRepository;
+
+  const DiaryScreen(this.databaseRepository, {super.key});
 
   @override
   State<DiaryScreen> createState() => _DiaryScreenState();
 }
 
 class _DiaryScreenState extends State<DiaryScreen> {
-  MockDatabase db = MockDatabase();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         body: FutureBuilder(
-          future: db.getAllDailyEntries(),
+          future: widget.databaseRepository.getAllDailyEntries(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Container(
